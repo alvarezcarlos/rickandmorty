@@ -5,7 +5,6 @@
     </label>
     
     <b-media 
-        v-if="results.length"
         v-for="(result, index) in results" :key="index"
         tag="li" class="mb-5">
           <b-img 
@@ -21,6 +20,7 @@
             <b>Género:</b> {{result.gender}}<br>
           </p>
         </b-media>
+        
     
   </div>
 </template>
@@ -32,18 +32,18 @@ export default {
   data(){
     return{
       character:'',
+      info:[],
       results:[]
     }
   },
   watch:{
-    character: function(newValue, oldValue){
+    character: function(){
       axios
         .get(`https://rickandmortyapi.com/api/character/?name=${this.character}`)
         .then(response => {
-          let info = response.data.info
+          this.info = response.data.info
           let data = response.data.results
-          console.log(data[0].id)
-          if(data[0].id != NaN){
+            if(Number(data[0].id)){
             this.results = data
           }
         })
