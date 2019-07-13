@@ -20,8 +20,6 @@
             <b>Género:</b> {{result.gender}}<br>
           </p>
         </b-media>
-        
-    
   </div>
 </template>
 
@@ -37,7 +35,7 @@ export default {
     }
   },
   watch:{
-    character: function(){
+    character: function (){
       axios
         .get(`https://rickandmortyapi.com/api/character/?name=${this.character}`)
         .then(response => {

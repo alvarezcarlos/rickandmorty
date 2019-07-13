@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <img class="title"src="../assets/title.png" alt="logo">
-    <img class="img2"src="../assets/rickmorty.png" alt="rickandmorty" height="200px">
+    <img class="title"src="@/assets/title.png" alt="logo">
+    <img class="img2"src="@/assets/rickmorty.png" alt="rickandmorty" height="200px">
   </div>
 </template>
 
